@@ -5,20 +5,19 @@ import com.example.galeriaBack.dto.GaleriaResponseDTO;
 import com.example.galeriaBack.entitie.Galeria;
 import com.example.galeriaBack.repository.GaleriaRepositoryJPA;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("galerias")
 public class GaleriaController {
 
     @Autowired
     private GaleriaRepositoryJPA repository;
 
-    @PostMapping("/galerias")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping
     public void saveAll(@RequestBody GaleriaRequestDTO dados) {
 
         Galeria galeria= new Galeria(dados);
@@ -26,7 +25,8 @@ public class GaleriaController {
         repository.save(galeria);
     }
 
-    @GetMapping("/galerias")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping
     public List<GaleriaResponseDTO> getAll() {
         List<GaleriaResponseDTO> listaGaleria = repository.findAll().stream().map(GaleriaResponseDTO::new).toList();
         return listaGaleria;
