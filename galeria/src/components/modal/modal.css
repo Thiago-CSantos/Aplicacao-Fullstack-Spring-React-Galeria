@@ -1,0 +1,72 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.modal-conteudo {
+  color:#242424;
+  background-color: #ffffff9a;
+  padding: 20px;
+  border: none;
+  border-radius: 24px;
+  width: 41%;
+  height: 41%;
+}
+
+.modal-conteudo h2{
+  display: flex;
+  justify-content: center;
+}
+
+.fechar {
+  color: #242424;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.formulario input {
+  width: calc(100% - 24px);
+  line-height: 24px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 2.8%;
+}
+
+.formulario label {
+  color: #242424;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.modal .modal-conteudo .btn-secondary{
+  position: initial;
+  width: calc(100% + 15px);
+  height: 5vh;
+  color: #ffff;
+  border-radius: 10px;
+  border:none;
+  background-color: #3a44f8;
+}
+
+.modal .modal-conteudo .btn-secondary:hover{
+  transition-duration: 0.5s;
+  cursor: pointer;
+}

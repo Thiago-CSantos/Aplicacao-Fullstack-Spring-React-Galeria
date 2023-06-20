@@ -2,10 +2,19 @@
 import axios from "axios";
 import './App.css';
 import { Card } from "./components/card";
-import{Botao} from './components/button/Botao'
+import { Botao } from './components/button/Botao';
+import { Modal } from "./components/modal/Modal";
 import { useEffect, useState } from "react";
 
 export default function App() {
+
+  const [modalAberto, setModalAberto] = useState(false);
+  const abrirModal = () => {
+    setModalAberto(true);
+  }
+  const fecharModal = () => {
+    setModalAberto(false);
+  }
 
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(null);
@@ -41,8 +50,8 @@ export default function App() {
         })}
       </div>
 
-        <Botao nome={'Adicionar'}/>
-
+      <Botao click={abrirModal} nome={'Adicionar'} />
+      <Modal isOpen={modalAberto} onClose={fecharModal}/>
     </div>
   );
 }
