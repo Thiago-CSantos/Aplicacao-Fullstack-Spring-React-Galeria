@@ -17,20 +17,14 @@ export default function App() {
   }
 
   const [dados, setDados] = useState([]);
-  const [loading, setLoading] = useState(null);
+  
 
-  const [error, setError] = useState(null);
-
+  // Get com axios
   useEffect(() => {
     axios('http://localhost:8080/galerias')
       .then((respota) => {
         setDados(respota.data)
       })
-      .catch((error) => {
-        console.log('Erro: ' + error);
-        setError(error)
-      })
-      .finally(() => setLoading(false));
   }, []);
 
 
