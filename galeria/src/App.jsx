@@ -17,7 +17,6 @@ export default function App() {
   }
 
   const [dados, setDados] = useState([]);
-  
 
   // Get com axios
   useEffect(() => {
@@ -45,7 +44,7 @@ export default function App() {
       </div>
 
       <Botao click={abrirModal} nome={'Adicionar'} />
-      <Modal isOpen={modalAberto} onClose={fecharModal}/>
+      <Modal isOpen={modalAberto} onClose={fecharModal} />
     </div>
   );
 }
