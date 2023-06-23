@@ -18,7 +18,7 @@ export function Modal({ isOpen, onClose }) {
             descricao
         };
 
-        axios.post('http://localhost:8080/galerias', dados)
+        axios.post('http://localhost:8080/galerias', dados) //dados é o objeto que contém os dados a serem enviados no corpo da solicitação.
             .then(resposta => {
                 setResponse(resposta.data);
             });
@@ -28,7 +28,8 @@ export function Modal({ isOpen, onClose }) {
     }
 
     if (!isOpen) {
-        return null;
+        console.log("Modal fechado");
+        return;
     }
 
     return (
@@ -38,7 +39,7 @@ export function Modal({ isOpen, onClose }) {
                 <h2>Meu Modal</h2>
                 <form action="" className="formulario">
                     <label >Titulo:</label>
-                    <input type="text" onChange={event => setTitulo(event.target.value)}/>
+                    <input type="text" onChange={event => setTitulo(event.target.value)} />
                     <label >Url da imagem:</label>
                     <input type="text" onChange={event => setImage(event.target.value)} />
                     <label >Descrição:</label>

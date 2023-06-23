@@ -1,17 +1,33 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import './card.css';
+import { ModalAberto } from './AbrirModal/ModalAberto';
 
 
 // eslint-disable-next-line react/prop-types
 export function Card({ titulo, image, descricao }) {
+
+    const [modalAberto, setModalAberto] = useState(false);
+
+    const handleCardClick = () => {
+        setModalAberto(true);
+    }
+
+    const handleCloseCard = () =>{
+        setModalAberto(false);
+    }
+
     return (
-        <div className="container">
-            <div className="card">
-                <h2>{titulo}</h2>
-                <img src={image} />
-                <p>{descricao}</p>
+        <>
+            <div className="container" onClick={handleCardClick}>
+                <div className="card">
+                    <h2>{titulo}</h2>
+                    <img src={image} />
+                    <p>{descricao}</p>
+                </div>
             </div>
-        </div>
+            {modalAberto && <ModalAberto onFechar={handleCloseCard}/>}
+
+        </>
     )
 }
