@@ -13,7 +13,7 @@
 }
 
 .modal-conteudo {
-  color:#242424;
+  color: #242424;
   background-color: #ffffff9a;
   padding: 20px;
   border: none;
@@ -22,7 +22,7 @@
   height: 41%;
 }
 
-.modal-conteudo h2{
+.modal-conteudo h2 {
   display: flex;
   justify-content: center;
 }
@@ -56,17 +56,17 @@
   font-size: 18px;
 }
 
-.modal .modal-conteudo .btn-secondary{
+.modal .modal-conteudo .btn-secondary {
   position: initial;
   width: calc(100% + 15px);
   height: 5vh;
   color: #ffff;
   border-radius: 10px;
-  border:none;
+  border: none;
   background-color: #3a44f8;
 }
 
-.modal .modal-conteudo .btn-secondary:hover{
+.modal .modal-conteudo .btn-secondary:hover {
   transition-duration: 0.5s;
   cursor: pointer;
 }

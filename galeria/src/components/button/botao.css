@@ -2,8 +2,9 @@
 .btn{
     display: flex;
     justify-content: center;
+    position: fixed;
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
 }
 
 .btn button{

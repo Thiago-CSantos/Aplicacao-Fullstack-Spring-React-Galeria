@@ -23,6 +23,7 @@ export default function App() {
     axios('http://localhost:8080/galerias')
       .then((respota) => {
         setDados(respota.data)
+        console.log(respota.data);
       })
   }, []);
 
@@ -30,12 +31,17 @@ export default function App() {
   return (
     <div className='App'>
       <h1>Galeria</h1>
-
+      <nav>
+        <div className="navbar">
+        <button type="button" className="botao">Alterar</button>
+        </div>
+      </nav>
       <div className="card-grid">
         {dados?.map((item) => {
           // eslint-disable-next-line react/jsx-key
           return <Card
             key={item.id}
+            id={item.id}
             titulo={item.titulo}
             image={item.image}
             descricao={item.descricao}

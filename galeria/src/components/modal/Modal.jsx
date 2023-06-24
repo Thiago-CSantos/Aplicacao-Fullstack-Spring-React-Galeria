@@ -18,7 +18,7 @@ export function Modal({ isOpen, onClose }) {
             descricao
         };
 
-        axios.post('http://localhost:8080/galerias', dados) //dados é o objeto que contém os dados a serem enviados no corpo da solicitação.
+        axios.post('http://localhost:8080/galerias ', dados) //dados é o objeto que contém os dados a serem enviados no corpo da solicitação.
             .then(resposta => {
                 setResponse(resposta.data);
             });

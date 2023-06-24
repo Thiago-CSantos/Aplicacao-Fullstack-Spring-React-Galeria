@@ -5,7 +5,7 @@ import { ModalAberto } from './AbrirModal/ModalAberto';
 
 
 // eslint-disable-next-line react/prop-types
-export function Card({ titulo, image, descricao }) {
+export function Card({ id, titulo, image, descricao }) {
 
     const [modalAberto, setModalAberto] = useState(false);
 
@@ -26,7 +26,7 @@ export function Card({ titulo, image, descricao }) {
                     <p>{descricao}</p>
                 </div>
             </div>
-            {modalAberto && <ModalAberto onFechar={handleCloseCard}/>}
+            {modalAberto && <ModalAberto onFechar={handleCloseCard} idAtual={id}/>}
 
         </>
     )
