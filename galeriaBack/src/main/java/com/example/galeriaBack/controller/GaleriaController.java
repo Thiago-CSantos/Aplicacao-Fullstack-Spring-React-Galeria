@@ -55,4 +55,11 @@ public class GaleriaController {
         repository.save(galeriaOptional);
 
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @DeleteMapping("/galerias/{id}")
+    public void Delete(@PathVariable("id") UUID id){
+        repository.deleteById(id);
+    }
+
 }
