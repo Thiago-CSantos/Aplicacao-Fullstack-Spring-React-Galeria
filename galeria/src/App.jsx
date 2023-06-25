@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import './App.css';
-import { Card } from "./components/card";
+import { Card } from "./components/Card";
 import { Botao } from './components/button/Botao';
 import { Modal } from "./components/modal/Modal";
+import { ModalUpdate } from "./components/modalUpdate/ModalUpdate";
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -16,9 +17,18 @@ export default function App() {
     setModalAberto(false);
   }
 
-  const [dados, setDados] = useState([]);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  }
+  const handleClose = () => {
+    setOpen(false);
+  }
 
   // Get com axios
+  const [dados, setDados] = useState([]);
+
   useEffect(() => {
     axios('http://localhost:8080/galerias')
       .then((respota) => {
@@ -33,7 +43,8 @@ export default function App() {
       <h1>Galeria</h1>
       <nav>
         <div className="navbar">
-        <button type="button" className="botao">Alterar</button>
+          <button type="button" className="botao" onClick={handleOpen}>Alterar</button>
+          {open && <ModalUpdate onFechar={handleClose}/>}
         </div>
       </nav>
       <div className="card-grid">

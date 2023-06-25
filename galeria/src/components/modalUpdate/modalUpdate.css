@@ -1,0 +1,71 @@
+.over {
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+}
+
+.over-container {
+      color: #242424;
+      background-color: #ffffff9a;
+      padding: 20px;
+      border: none;
+      border-radius: 24px;
+      min-width: 45%;
+      min-height: 41vh;
+}
+
+.over-container span {
+      float: right;
+      color: #242424;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+}
+
+.over-form label {
+      font-weight: 700;
+      color: #242424;
+}
+
+.over-container h2 {
+      display: flex;
+      justify-content: center;
+}
+
+.over-form {
+      display: flex;
+      flex-direction: column;
+}
+
+
+.over-form input {
+      width: calc(100% - 24px);
+      line-height: 10px;
+      border: none;
+      line-height: 24px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+}
+
+.over-form button {
+      position: initial;
+      width: calc(100% + 15px);
+      height: 5vh;
+      color: #ffff;
+      border-radius: 10px;
+      border: none;
+      background-color: #3a44f8;
+}
+
+.over-form button:hover {
+      transition-duration: 0.5s;
+      cursor: pointer;
+}
