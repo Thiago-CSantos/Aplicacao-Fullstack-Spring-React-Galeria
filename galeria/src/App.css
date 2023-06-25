@@ -33,6 +33,7 @@ nav .navbar {
     border-radius: 10px;
     background-color: #0275d8;
     width:100%;
+    margin: 2px 0;
 }
 
 .botao:hover{
