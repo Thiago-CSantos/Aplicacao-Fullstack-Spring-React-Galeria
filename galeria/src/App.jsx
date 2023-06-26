@@ -36,6 +36,18 @@ export default function App() {
     setOpenDelete(false);
   }
 
+  const [deleteAll, setDeleteAll] = useState();
+  const handleDeleteAll = () => {
+    axios.delete('http://localhost:8080/galerias/deleteAll')
+      .then(resposta => {
+        console.log(resposta.status);
+        window.location.reload();
+      })
+      .catch(error => console.log(error));
+  }
+
+
+
   // Get com axios
   const [dados, setDados] = useState([]);
 
@@ -55,8 +67,11 @@ export default function App() {
         <div className="navbar">
           <button type="button" className="botao" onClick={handleOpen}>Alterar</button>
           {open && <ModalUpdate onFechar={handleClose} />}
-          <button className="botao" onClick={handleOpenDelete}>Deletar</button>
+
+          <button className="botao" onClick={handleOpenDelete}>DeleteById</button>
           {openDelete && <ModalDelete onFechar={handleCloseDelete} />}
+
+          <button className="botao" onClick={handleDeleteAll}>DeleteAll</button>
         </div>
       </nav>
       <div className="card-grid">
