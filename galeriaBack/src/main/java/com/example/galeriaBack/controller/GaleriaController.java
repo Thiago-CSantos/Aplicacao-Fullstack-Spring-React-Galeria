@@ -62,4 +62,10 @@ public class GaleriaController {
         repository.deleteById(id);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @DeleteMapping("/galerias/deleteAll")
+    public void deleteAll(){
+        repository.deleteAll();
+    }
+
 }
